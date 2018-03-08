@@ -19,6 +19,11 @@ gem 'haml-rails'
 # line bot
 gem 'line-bot-api'
 
+# Image Uploader
+gem 'carrierwave'
+gem 'rmagick', require: 'RMagick'
+gem 'fog'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
