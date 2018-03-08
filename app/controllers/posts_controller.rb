@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Picture.new
+    @pic = Picture.last
   end
 
   def create
