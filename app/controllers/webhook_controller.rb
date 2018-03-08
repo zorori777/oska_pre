@@ -24,36 +24,59 @@ class WebhookController < ApplicationController
                 "altText": "Come on",
                 "template": {
                     "type": "buttons",
-                    "title": "Boke",
-                    "text": "Please select",
+                    "thumbnailImageUrl": "https://c1.staticflickr.com/9/8132/29971985550_e666791121_b.jpg",
+                    "imageAspectRatio": "rectangle",
+                    "imageSize": "cover",
+                    "imageBackgroundColor": "#FFFFFF",
+                    "title": "孫悟空",
+                    "text": "Do you want to talk?",
                     "actions": [
                         {
                           "type": "postback",
-                          "label": "NANDEYANEN",
-                          "data": "action=buy&itemid=123"
+                          "label": "OK",
+                          "data": "OK"
                         },
                         {
                           "type": "postback",
-                          "label": "OI",
-                          "data": "action=add&itemid=123"
-                        },
-                        {
-                          "type": "postback",
-                          "label": "FUCK",
-                          "data": "action=add&itemid=123"
+                          "label": "NO",
+                          "data": "NO"
                         }
                     ]
                 }
               }
             client.reply_message(event['replyToken'], message)
-            when Line::Bot::Event::MessageType::Image
-              message = {
-                type: 'text',
-                text: "テストなう"
-              }
-              client.push_message(event['replyToken'], message)
           end
-      end
+        when Line::Bot::Event::Postback
+          if event["postback"]["data"] =="OK"
+            message = {
+              "type": "template",
+              "altText": "Come on",
+              "template": {
+                  "type": "buttons",
+                  "title": "Found?",
+                  "text": "Cute and cool",
+                  "actions": [
+                      {
+                        "type": "postback",
+                        "label": "OK",
+                        "data": "Found"
+                      }
+                  ]
+              }
+            }
+          elsif event["postback"]["data"] == "NO"
+            message = {
+              type: 'text',
+              text: "See you"
+            }
+          elsif event["postback"]["data"] == "Found"
+            message = {
+              type: 'text',
+              text: "Don't hesitate!"
+            }
+          end
+          client.reply_message(event['replyToken'], message)
+        end
       }
       head :ok
   end
