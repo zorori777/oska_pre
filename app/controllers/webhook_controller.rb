@@ -76,8 +76,20 @@ class WebhookController < ApplicationController
             }
           elsif event["postback"]["data"] == "Found"
             message = {
-              type: 'text',
-              text: "Please say「nandeyanen!」after comendians finished their show"
+              "type": "template",
+              "altText": "Finding comedian",
+              "template": {
+                  "type": "buttons",
+                  "title": "Please say「nandeyanen!」",
+                  "text": "Take a picture and click below link",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "Please click ",
+                      "uri": "https://bb634c96.ngrok.io/posts/new"
+                    }
+                  ]
+              }
             }
           end
           client.reply_message(event['replyToken'], message)
