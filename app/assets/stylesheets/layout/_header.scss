@@ -1,0 +1,12 @@
+.l-header {
+  height: 65px;
+  background-color: $main-color;
+  border-bottom: 1px solid $main-border;
+  color: $white;
+  &__logo {
+    font-weight: bold;
+    line-height: 65px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 30px;
+  }
+}
