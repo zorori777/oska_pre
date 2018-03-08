@@ -1,0 +1,15 @@
+.top-i {
+  &__inner {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__headline {
+    font-family: 'Bad Script', cursive;
+    text-align: center;
+    margin: 100px 0 40px ;
+    font-size: 52px;
+  }
+  &__hr {
+    width: 120px;
+  }
+}
