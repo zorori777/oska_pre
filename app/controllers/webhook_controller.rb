@@ -33,8 +33,8 @@ class WebhookController < ApplicationController
                     "actions": [
                         {
                           "type": "postback",
-                          "label": "OK",
-                          "data": "OK"
+                          "label": "YES",
+                          "data": "YES"
                         },
                         {
                           "type": "postback",
@@ -47,14 +47,14 @@ class WebhookController < ApplicationController
             client.reply_message(event['replyToken'], message)
           end
         when Line::Bot::Event::Postback
-          if event["postback"]["data"] =="OK"
+          if event["postback"]["data"] == "YES"
             message = {
               "type": "template",
-              "altText": "Come on",
+              "altText": "Finding comedian",
               "template": {
                   "type": "buttons",
-                  "title": "Found?",
-                  "text": "Cute and cool",
+                  "title": "Did you find comedian?",
+                  "text": "Looking around well?",
                   "actions": [
                       {
                         "type": "postback",
@@ -64,6 +64,11 @@ class WebhookController < ApplicationController
                   ]
               }
             }
+            rep_message = {
+              type: 'text',
+              text: "「なんでやねん」にツッコめるぼけをしてください！"
+            }
+            client.push_message("Uffc4f4045d6fff54516c74084f649009", rep_message)
           elsif event["postback"]["data"] == "NO"
             message = {
               type: 'text',
@@ -72,7 +77,7 @@ class WebhookController < ApplicationController
           elsif event["postback"]["data"] == "Found"
             message = {
               type: 'text',
-              text: "Don't hesitate!"
+              text: "Please say「nandeyanen!」after comendians finished their show"
             }
           end
           client.reply_message(event['replyToken'], message)
