@@ -68,7 +68,7 @@ class WebhookController < ApplicationController
               type: 'text',
               text: "「なんでやねん」にツッコめるぼけをしてください！"
             }
-            client.push_message("Uffc4f4045d6fff54516c74084f649009", rep_message)
+            client.push_message(ENV["LINE_PUSH_USER"], rep_message)
           elsif event["postback"]["data"] == "NO"
             message = {
               type: 'text',
