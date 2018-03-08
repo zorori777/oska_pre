@@ -16,6 +16,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'erb2haml'
 gem 'haml-rails'
 
+# login
+gem 'devise'
+gem 'omniauth-line'
+
 # line bot
 gem 'line-bot-api'
 

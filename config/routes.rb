@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "tops#index"
   post '/callback' => 'webhook#callback'
   resources :tops, only: [:index]
