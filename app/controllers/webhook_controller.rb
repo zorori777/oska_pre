@@ -24,11 +24,11 @@ class WebhookController < ApplicationController
                 "altText": "Come on",
                 "template": {
                     "type": "buttons",
-                    "thumbnailImageUrl": "https://c1.staticflickr.com/9/8132/29971985550_e666791121_b.jpg",
+                    "thumbnailImageUrl": "https://img.kyotore.jp/2017/04/article_20170421_717_totsuhara_img3-580x490.jpg",
                     "imageAspectRatio": "rectangle",
                     "imageSize": "cover",
                     "imageBackgroundColor": "#FFFFFF",
-                    "title": "孫悟空",
+                    "title": "YURIAN",
                     "text": "Do you want to talk?",
                     "actions": [
                         {
@@ -53,6 +53,10 @@ class WebhookController < ApplicationController
               "altText": "Finding comedian",
               "template": {
                   "type": "buttons",
+                  "thumbnailImageUrl": "https://image.slidesharecdn.com/phrasalverbs-130203100305-phpapp02/95/phrasal-verbs-english-2batx-7-638.jpg?cb=1359885841",
+                  "imageAspectRatio": "rectangle",
+                  "imageSize": "cover",
+                  "imageBackgroundColor": "#FFFFFF",
                   "title": "Did you find comedian?",
                   "text": "Looking around well?",
                   "actions": [
@@ -66,7 +70,7 @@ class WebhookController < ApplicationController
             }
             rep_message = {
               type: 'text',
-              text: "「なんでやねん」にツッコめるぼけをしてください！"
+              text: "外国人が近づいています！"
             }
             client.push_message(ENV["LINE_PUSH_USER"], rep_message)
           elsif event["postback"]["data"] == "NO"
@@ -80,17 +84,27 @@ class WebhookController < ApplicationController
               "altText": "Finding comedian",
               "template": {
                   "type": "buttons",
+                  "thumbnailImageUrl": "https://rr.img.naver.jp/mig?src=http%3A%2F%2Flivedoor.blogimg.jp%2Fgarlsvip%2Fimgs%2F3%2F3%2F33a910a4.jpg&twidth=1200&theight=1200&qlt=80&res_format=jpg&op=r",
+                  "imageAspectRatio": "rectangle",
+                  "imageSize": "cover",
+                  "imageBackgroundColor": "#FFFFFF",
                   "title": "Please say「nandeyanen!」",
                   "text": "Take a picture and click below link",
                   "actions": [
                     {
                       "type": "uri",
                       "label": "Please click ",
-                      "uri": "https://bb634c96.ngrok.io/posts/new"
+                      "uri": "https://8b98cf37.ngrok.io/users/auth/line"
                     }
                   ]
               }
             }
+            rep_message = {
+              type: 'text',
+              text: "「なんでやねん」にツッコめるぼけをしてください！"
+            }
+            client.push_message(ENV["LINE_PUSH_USER"], rep_message)
+
           end
           client.reply_message(event['replyToken'], message)
         end
