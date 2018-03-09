@@ -34,3 +34,31 @@
   font-family: 'Montserrat', sans-serif;
   font-family: 'Krona One', sans-serif;
 }
+
+.follow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  background: #03A9F4;
+  display: inline-block;
+  margin: 50px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 13px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s ease;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+  i {
+    margin-right: 20px;
+    transition: margin-right 0.2s ease;
+  }
+  &:hover {
+    width: 134px;
+    transform: translateX(-50px);
+    i {
+      margin-right: 10px;
+    }
+  }
+}
