@@ -1,4 +1,7 @@
 = form_for @post, url: posts_path do |f|
-  = f.label :image, "Post your picture"
-  = f.file_field :image
-  = f.submit
+  .post__form
+    .post__h1 Post Your Picture
+    .post__input image
+    = f.label :image, class: "post__image"
+    = f.file_field :image, class: "post__input"
+    = f.submit class: "post__button"
