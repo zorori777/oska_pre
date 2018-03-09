@@ -15,10 +15,8 @@ ActiveRecord::Schema.define(version: 20180308213915) do
   create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "image"
     t.float "emotional_point", limit: 24
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
   create_table "social_profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,6 +40,5 @@ ActiveRecord::Schema.define(version: 20180308213915) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "pictures", "users"
   add_foreign_key "social_profiles", "users"
 end
