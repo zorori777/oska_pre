@@ -86,7 +86,7 @@ class WebhookController < ApplicationController
                     {
                       "type": "uri",
                       "label": "Please click ",
-                      "uri": "https://bb634c96.ngrok.io/posts/new"
+                      "uri": "https://98cc7ff3.ngrok.io/users/auth/line"
                     }
                   ]
               }

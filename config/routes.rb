@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "tops#index"
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth_callbacks"
+  }
   post '/callback' => 'webhook#callback'
   resources :tops, only: [:index]
   resources :users, only: [:index]
