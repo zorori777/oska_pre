@@ -70,7 +70,7 @@ class WebhookController < ApplicationController
             }
             rep_message = {
               type: 'text',
-              text: "「なんでやねん」にツッコめるぼけをしてください！"
+              text: "外国人が近づいています！"
             }
             client.push_message(ENV["LINE_PUSH_USER"], rep_message)
           elsif event["postback"]["data"] == "NO"
@@ -84,17 +84,27 @@ class WebhookController < ApplicationController
               "altText": "Finding comedian",
               "template": {
                   "type": "buttons",
+                  "thumbnailImageUrl": "https://rr.img.naver.jp/mig?src=http%3A%2F%2Flivedoor.blogimg.jp%2Fgarlsvip%2Fimgs%2F3%2F3%2F33a910a4.jpg&twidth=1200&theight=1200&qlt=80&res_format=jpg&op=r",
+                  "imageAspectRatio": "rectangle",
+                  "imageSize": "cover",
+                  "imageBackgroundColor": "#FFFFFF",
                   "title": "Please say「nandeyanen!」",
                   "text": "Take a picture and click below link",
                   "actions": [
                     {
                       "type": "uri",
                       "label": "Please click ",
-                      "uri": "https://574cf9e2.ngrok.io/users/auth/line"
+                      "uri": "https://8b98cf37.ngrok.io/users/auth/line"
                     }
                   ]
               }
             }
+            rep_message = {
+              type: 'text',
+              text: "「なんでやねん」にツッコめるぼけをしてください！"
+            }
+            client.push_message(ENV["LINE_PUSH_USER"], rep_message)
+
           end
           client.reply_message(event['replyToken'], message)
         end
