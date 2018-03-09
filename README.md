@@ -1,24 +1,25 @@
-# README
+# TRUNK HACKATHON IN OSAKA 「何言うてんの？寝てる暇あらへんで！」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## テーマ
 
-Things you may want to cover:
+「関西を世界一ギークな街になるためのサービスを作ろう!」
 
-* Ruby version
+## サービス名
 
-* System dependencies
+**Whyやねん！**
 
-* Configuration
+## 使用技術
 
-* Database creation
+- [LINE Beacon](https://developers.line.me/ja/docs/messaging-api/using-beacons/)
 
-* Database initialization
+- [LINE Messaging API](https://developers.line.me/ja/services/messaging-api/)
 
-* How to run the test suite
+- [LINE ログイン](https://developers.line.me/ja/docs/line-login/overview/)
 
-* Services (job queues, cache servers, search engines, etc.)
+- [Face API ~ Microsoft Azure ~](https://azure.microsoft.com/ja-jp/services/cognitive-services/face/)
 
-* Deployment instructions
+- Twitter API
 
-* ...
+- Ruby on Rails
+
+- HTML&CSS
