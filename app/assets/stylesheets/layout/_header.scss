@@ -8,5 +8,11 @@
     line-height: 65px;
     font-family: 'Montserrat', sans-serif;
     margin-left: 30px;
+    display: inline-block;
+  }
+
+  .my-page--right {
+    float: right;
+    margin-right: 30px;
   }
 }
