@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
   resources :users, only: [:index]
   resources :posts, only: [:new, :create]
+  get 'user' => 'tops#show'
 end
