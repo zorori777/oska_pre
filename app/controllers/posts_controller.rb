@@ -32,6 +32,7 @@ class PostsController < ApplicationController
    #    result = face_data.sum {|data| data["faceAttributes"]["emotion"]["happiness"]} / face_number
    #    @post.update(emotional_point: result)
    #  end
+    redirect_to root_path
   end
 
   private
